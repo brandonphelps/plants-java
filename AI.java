@@ -50,6 +50,12 @@ public class AI extends BaseAI
         {
           Plant foe = plants[i];
 
+          //don't attack yourself!
+          if(foe.getId() == plant.getId())
+          {
+             continue;
+          }
+
           //if it's dead skip it
           if(foe.getRads() >= foe.getMaxRads())
           {
